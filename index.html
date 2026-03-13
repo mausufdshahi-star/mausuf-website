@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Mausuf / मौसूफ.</title>
+  <title>Mausuf / मौसूफ.</title>
   <style>
     body {
       font-family: Helvetica, Arial, sans-serif;
       margin: 0;
+      background: url('assets/nepal-flag.gif') no-repeat center center fixed;
       background-size: cover;
       color: #1a1a1a;
     }
@@ -17,7 +18,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: rgba(0, 56, 147, 0.9); /* dark blue with opacity for readability */
+      background-color: rgba(0, 56, 147, 0.9);
       color: white;
       padding: 1rem 5%;
       border-bottom: 3px solid white;
@@ -86,28 +87,23 @@
       }
     }
 
-    /* Contact Section */
-    .contact-section {
+    /* Main Section */
+    .main-section {
       max-width: 800px;
       margin: 5rem auto;
       padding: 2rem 5%;
       text-align: center;
-      background-color: rgba(255, 255, 255, 0.85); /* semi-transparent for readability */
+      background-color: rgba(255, 255, 255, 0.85);
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
 
-    .contact-section h1 {
+    .main-section h1 {
       font-size: 2rem;
       margin-bottom: 1.5rem;
     }
 
-    .contact-section p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-
-    .social-links a {
+    .main-section a {
       display: inline-block;
       margin: 0.5rem 1rem;
       color: #003893;
@@ -117,17 +113,14 @@
       transition: all 0.3s ease;
     }
 
-    .social-links a:hover {
+    .main-section a:hover {
       color: #DC143C;
       border-color: #DC143C;
     }
 
     @media (max-width: 768px) {
-      .contact-section h1 {
+      .main-section h1 {
         font-size: 1.6rem;
-      }
-      .contact-section p {
-        font-size: 1rem;
       }
     }
   </style>
@@ -148,17 +141,6 @@
     <a href="contact.html">Contact</a>
   </nav>
 </header>
-
-<section class="contact-section">
-  <h1>Get In Touch</h1>
-  <p>You can reach me via email or follow me on social media.</p>
-  <div class="social-links">
-    <a href="mailto:example@email.com">Email</a>
-    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-    <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-    <a href="https://www.facebook.com/" target="_blank">Facebook</a>
-  </div>
-</section>
 
 <script>
   const toggle = document.getElementById('menu-toggle');
