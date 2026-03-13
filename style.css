@@ -13,10 +13,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, #003893, #1a1aff);
+  background: #003893;
   color: white;
   padding: 1rem 5%;
-  border-bottom: 3px solid #DC143C;
   position: sticky;
   top: 0;
   z-index: 100;
