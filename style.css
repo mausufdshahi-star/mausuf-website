@@ -1,11 +1,7 @@
-  <style>
- 
+ <style>
+   
+
     /* Header */
-    body{
-      font-family: Helvetica, Arial, sans-serif;
-      margin: 0;
-      background-size: cover;
-    }
     header {
       display: flex;
       justify-content: space-between;
@@ -79,48 +75,88 @@
       }
     }
 
-    /* Contact Section */
-    .contact-section {
-      max-width: 800px;
+    /* Timeline Section */
+    #samagra {
+      max-width: 900px;
       margin: 5rem auto;
       padding: 2rem 5%;
-      text-align: center;
       background-color: rgba(255, 255, 255, 0.95);
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
 
-    .contact-section h1 {
+    #samagra h2 {
       font-size: 2rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
     }
 
-    .contact-section p {
-      font-size: 1.1rem;
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      border-left: 3px solid #003893; /* Dark blue timeline line */
+    }
+
+    .timeline-item {
+      position: relative;
       margin-bottom: 2rem;
+      padding-left: 1rem;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      border-radius: 5px;
     }
 
-    .social-links a {
-      display: inline-block;
-      margin: 0.5rem 1rem;
-      color: #003893;
-      text-decoration: none;
+    .timeline-item:hover {
+      transform: translateX(10px);
+      background-color: rgba(220, 20, 60, 0.05);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 0;
+      width: 15px;
+      height: 15px;
+      background-color: #DC143C;
+      border-radius: 50%;
+      border: 3px solid white;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .timeline-item:hover::before {
+      transform: scale(1.3);
+      background-color: #003893;
+    }
+
+    .timeline-item .year {
       font-weight: bold;
-      border-bottom: 2px solid transparent;
-      transition: all 0.3s ease;
+      color: #003893;
+      display: block;
+      margin-bottom: 0.3rem;
+      transition: color 0.3s ease;
     }
 
-    .social-links a:hover {
+    .timeline-item:hover .year {
       color: #DC143C;
-      border-color: #DC143C;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: #1a1a1a;
+      line-height: 1.4;
+      transition: color 0.3s ease;
+    }
+
+    .timeline-item:hover p {
+      color: #003893;
+      font-weight: 600;
     }
 
     @media (max-width: 768px) {
-      .contact-section h1 {
+      #samagra h2 {
         font-size: 1.6rem;
       }
-      .contact-section p {
-        font-size: 1rem;
-      }
     }
+
   </style>
