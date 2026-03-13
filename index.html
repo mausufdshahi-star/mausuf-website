@@ -3,39 +3,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mausuf / मौसूफ.</title>
+  <title>Contact - Mausuf / मौसूफ.</title>
   <style>
     body {
       font-family: Helvetica, Arial, sans-serif;
       margin: 0;
-      background: #fff;
+      background-size: cover;
       color: #1a1a1a;
     }
+
+    /* Header */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #003893; /* dark blue header */
+      background-color: rgba(0, 56, 147, 0.9); /* dark blue with opacity for readability */
       color: white;
-      padding: 1.5rem 5%;
-      border-bottom: 3px solid white; /* line below header */
+      padding: 1rem 5%;
+      border-bottom: 3px solid white;
+      position: relative;
+      z-index: 10;
     }
+
     .logo {
       font-weight: 800;
       font-size: 1.5rem;
     }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
     nav a {
       color: white;
-      margin-left: 2rem;
       text-decoration: none;
       font-weight: 600;
+      transition: color 0.3s ease;
     }
+
     nav a:hover {
-      color: #DC143C; /* red hover */
+      color: #DC143C;
     }
-    h1 {
+
+    /* Mobile Hamburger */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 56, 147, 0.95);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+        border-left: 3px solid white;
+        border-bottom: 3px solid white;
+      }
+      nav a {
+        margin: 1rem 0;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      nav.active {
+        display: flex;
+      }
+    }
+
+    /* Contact Section */
+    .contact-section {
+      max-width: 800px;
+      margin: 5rem auto;
+      padding: 2rem 5%;
       text-align: center;
-      margin: 5rem 0 2rem 0;
+      background-color: rgba(255, 255, 255, 0.85); /* semi-transparent for readability */
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .contact-section h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-section p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin: 0.5rem 1rem;
+      color: #003893;
+      text-decoration: none;
+      font-weight: bold;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #DC143C;
+      border-color: #DC143C;
+    }
+
+    @media (max-width: 768px) {
+      .contact-section h1 {
+        font-size: 1.6rem;
+      }
+      .contact-section p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -43,7 +136,12 @@
 
 <header>
   <div class="logo">MAUSUF/मौसूफ.</div>
-  <nav>
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav id="nav">
     <a href="index.html">Home</a>
     <a href="articles.html">Articles</a>
     <a href="about.html">About Me</a>
@@ -51,6 +149,25 @@
   </nav>
 </header>
 
+<section class="contact-section">
+  <h1>Get In Touch</h1>
+  <p>You can reach me via email or follow me on social media.</p>
+  <div class="social-links">
+    <a href="mailto:example@email.com">Email</a>
+    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+    <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+    <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+  </div>
+</section>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
 
 </body>
 </html>
