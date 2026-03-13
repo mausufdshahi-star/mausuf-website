@@ -1,418 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mausuf/मौसूफ</title>
-    <style>
-        /* --- CSS VARIABLES (Nepali Flag Palette) --- */
-        :root {
-            --nepal-red: #DC143C; /* Crimson Red */
-            --nepal-blue: #003893; /* Deep Blue */
-            --white: #ffffff;
-            --off-white: #f4f4f4;
-            --text-dark: #1a1a1a;
-            --text-light: #666666;
-            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mausuf/मौसूफ.</title>
 
-        /* --- GLOBAL STYLES --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
 
-        body {
-            font-family: var(--font-main);
-            background-color: var(--white);
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: 0.3s ease;
-        }
+body{
+font-family:Helvetica, Arial, sans-serif;
+height:100vh;
+background:url("https://commons.wikimedia.org/wiki/File:Animated-Flag-Nepal.gif#/media/File:Animated-Flag-Nepal.gif") center/cover no-repeat fixed;
+}
 
-        ul {
-            list-style: none;
-        }
+/* HEADER */
 
-        /* --- NAVIGATION --- */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            z-index: 1000;
-            border-bottom: 2px solid var(--nepal-red);
-        }
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:2rem 6%;
+background:#003893;
+border-bottom:3px solid white;
+}
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--nepal-blue);
-            letter-spacing: -1px;
-        }
+.logo{
+font-weight:800;
+font-size:1.4rem;
+color:white;
+}
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
+nav{
+display:flex;
+gap:2rem;
+font-weight:600;
+}
 
-        .nav-links a {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
+nav a{
+text-decoration:none;
+color:white;
+}
 
-        .nav-links a:hover {
-            color: var(--nepal-red);
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 5%;
-            background: linear-gradient(135deg, var(--white) 50%, var(--off-white) 50%);
-            position: relative;
-        }
-
-        .hero h1 {
-            font-size: 5rem;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-
-        .hero h1 span {
-            color: var(--nepal-red);
-            display: block;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            border: 2px solid var(--nepal-blue);
-            color: var(--nepal-blue);
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .cta-btn:hover {
-            background-color: var(--nepal-blue);
-            color: var(--white);
-        }
-
-        /* --- SECTIONS GENERAL --- */
-        section {
-            padding: 5rem 5%;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 4px;
-            background-color: var(--nepal-red);
-            bottom: -10px;
-            left: 0;
-        }
-
-        /* --- ABOUT & JOURNEY --- */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .journey-card {
-            background: var(--off-white);
-            padding: 2rem;
-            border-left: 5px solid var(--nepal-blue);
-            margin-bottom: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .journey-card:hover {
-            transform: translateX(10px);
-        }
-
-        .journey-card h3 {
-            margin-bottom: 0.5rem;
-            color: var(--nepal-blue);
-        }
-
-        /* --- ARTWORK & PROJECTS --- */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .art-card {
-            background: var(--white);
-            border: 1px solid #eee;
-            overflow: hidden;
-            position: relative;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        .art-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .art-card:hover img {
-            transform: scale(1.05);
-        }
-
-        .art-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(220, 20, 60, 0.9); /* Red overlay */
-            color: white;
-            padding: 1rem;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .art-card:hover .art-overlay {
-            transform: translateY(0);
-        }
-
-        /* --- FUTURE PLANS --- */
-        .plans-section {
-            background-color: var(--nepal-blue);
-            color: var(--white);
-        }
-
-        .plans-section .section-title {
-            color: var(--white);
-        }
-        
-        .plans-section .section-title::after {
-            background-color: var(--nepal-red);
-        }
-
-        .plan-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 1.5rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .plan-item h3 {
-            font-size: 1.2rem;
-        }
-
-        .plan-item span {
-            color: var(--nepal-red);
-            font-weight: bold;
-        }
-
-        /* --- CONTACT --- */
-        .contact-container {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            font-size: 1.1rem;
-            border-bottom: 2px solid var(--nepal-red);
-            padding-bottom: 5px;
-        }
-
-        .social-links a:hover {
-            color: var(--nepal-blue);
-            border-color: var(--nepal-blue);
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: var(--text-dark);
-            color: var(--white);
-            font-size: 0.8rem;
-        }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 3rem; }
-            .about-grid { grid-template-columns: 1fr; }
-            .nav-links { display: none; } /* Simplified for demo */
-        }
-    </style>
+</style>
 </head>
+
 <body>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="logo">MAUSUF/मौसूफ.</div>
-        <ul class="nav-links">
-            <li><a href="#about">Journey</a></li>
-            <li><a href="#art">Artwork</a></li>
-            <li><a href="#plans">Future</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+<header>
 
-    <!-- HERO SECTION -->
-    <header class="hero">
-        <h1>Student. Analyst.<br><span>Artist.</span></h1>
-        <p>Welcome to my digital space. Exploring the intersection of politics, society, and art.</p>
-        <a href="#art" class="cta-btn">View My Work</a>
-    </header>
+<div class="logo">MAUSUF</div>
 
-    <!-- ABOUT & JOURNEY -->
-    <section id="about">
-        <h2 class="section-title">The Journey</h2>
-        <div class="about-grid">
-            <div class="text-content">
-                <p style="margin-bottom: 1rem;">
-                    I am Mausuf, a student navigating the complex world of political analysis. My work is driven by a desire to understand the social fabric of our nation and express it through both words and visuals.
-                </p>
-                <p>
-                    This website is a collection of my thoughts, my political observations, and my artistic endeavors.
-                </p>
-            </div>
-            <div class="journey-list">
-                <div class="journey-card">
-                    <h3>Current Focus</h3>
-                    <p>Political Science & Social Analysis</p>
-                </div>
-                <div class="journey-card">
-                    <h3>Passion</h3>
-                    <p>Visual Arts & Creative Expression</p>
-                </div>
-                <div class="journey-card">
-                    <h3>Goal</h3>
-                    <p>To bridge the gap between policy and public art.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<nav>
+<a href="articles.html">Articles</a>
+<a href="about.html">About Me</a>
+<a href="contact.html">Contact</a>
+</nav>
 
-    <!-- ARTWORK & PROJECTS -->
-    <section id="art" style="background-color: var(--off-white);">
-        <h2 class="section-title">Artwork & Projects</h2>
-        <div class="gallery">
-            <!-- Replace 'src' with your actual image links later -->
-            <div class="art-card">
-                <img src="https://via.placeholder.com/400x300/DC143C/ffffff?text=Political+Poster" alt="Artwork 1">
-                <div class="art-overlay">
-                    <h3>Political Poster Series</h3>
-                    <p>Visualizing social change.</p>
-                </div>
-            </div>
-            <div class="art-card">
-                <img src="https://via.placeholder.com/400x300/003893/ffffff?text=Social+Sketch" alt="Artwork 2">
-                <div class="art-overlay">
-                    <h3>Social Sketches</h3>
-                    <p>Observations of daily life.</p>
-                </div>
-            </div>
-            <div class="art-card">
-                <img src="https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Essay+Cover" alt="Artwork 3">
-                <div class="art-overlay">
-                    <h3>Essay Covers</h3>
-                    <p>Designing for impact.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+</header>
 
-    <!-- FUTURE PLANS -->
-    <section id="plans" class="plans-section">
-        <h2 class="section-title">Future Plans</h2>
-        <div class="plan-list">
-            <div class="plan-item">
-                <h3>Academic Research</h3>
-                <span>2024</span>
-            </div>
-            <div class="plan-item">
-                <h3>Art Exhibition</h3>
-                <span>2025</span>
-            </div>
-            <div class="plan-item">
-                <h3>Political Commentary Blog</h3>
-                <span>Coming Soon</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-        <div class="contact-container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p>Let's discuss politics, art, or just have a chat.</p>
-            
-            <div class="social-links">
-                <a href="#">Instagram</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">Facebook</a>
-                <a href="mailto:email@example.com">Email</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Mausuf. Designed with the spirit of Nepal.</p>
-    </footer>
-
-    <script>
-        // Simple script for smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
