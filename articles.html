@@ -8,34 +8,87 @@
     body {
       font-family: Helvetica, Arial, sans-serif;
       margin: 0;
-      background: #fff;
-      color: #1a1a1a;
+      background:;
+      color: ;
     }
+
+    /* Header */
     header {
+        color:white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #003893; /* dark blue header */
-      color: white;
-      padding: 1.5rem 5%;
-      border-bottom: 3px solid white; /* line below header */
+      background-color: rgba(0, 56, 147, 0.9);
+      padding: 1rem 5%;
+      border-bottom: 3px solid white;
+      position: relative;
+      z-index: 10;
     }
+
     .logo {
       font-weight: 800;
       font-size: 1.5rem;
     }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
     nav a {
       color: white;
-      margin-left: 2rem;
       text-decoration: none;
       font-weight: 600;
+      transition: color 0.3s ease;
     }
+
     nav a:hover {
-      color: #DC143C; /* red hover */
+      color: #DC143C;
     }
+
+    /* Mobile Hamburger */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 56, 147, 0.95);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+        border-left: 3px solid white;
+        border-bottom: 3px solid white;
+      }
+      nav a {
+        margin: 1rem 0;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      nav.active {
+        display: flex;
+      }
+    }
+
     h1 {
       text-align: center;
-      margin: 5rem 0 2rem 0;
+      margin: 1rem 0 2rem 0;
     }
   </style>
 </head>
@@ -43,7 +96,12 @@
 
 <header>
   <div class="logo">MAUSUF/मौसूफ.</div>
-  <nav>
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav id="nav">
     <a href="index.html">Home</a>
     <a href="articles.html">Articles</a>
     <a href="about.html">About Me</a>
@@ -52,6 +110,14 @@
 </header>
 
 <h1>Marxism in Nepal</h1>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav');
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
 
 </body>
 </html>
