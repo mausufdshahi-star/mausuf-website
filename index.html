@@ -4,125 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mausuf / मौसूफ.</title>
-  <style>
-    body {
-      font-family: Helvetica, Arial, sans-serif;
-      margin: 0;
-      background-size: cover;
-      color: #1a1a1a;
-    }
-
-    /* Header */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: rgba(0, 56, 147, 0.9);
-      color: white;
-      padding: 1rem 5%;
-      border-bottom: 3px solid white;
-      position: relative;
-      z-index: 10;
-    }
-
-    .logo {
-      font-weight: 800;
-      font-size: 1.5rem;
-    }
-
-    nav {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #DC143C;
-    }
-
-    /* Mobile Hamburger */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-    }
-
-    .menu-toggle span {
-      width: 25px;
-      height: 3px;
-      background: white;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        background-color: rgba(0, 56, 147, 0.95);
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 200px;
-        padding: 1rem;
-        border-left: 3px solid white;
-        border-bottom: 3px solid white;
-      }
-      nav a {
-        margin: 1rem 0;
-      }
-      .menu-toggle {
-        display: flex;
-      }
-      nav.active {
-        display: flex;
-      }
-    }
-
-    /* Main Section */
-    .main-section {
-      max-width: 800px;
-      margin: 5rem auto;
-      padding: 2rem 5%;
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.85);
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    }
-
-    .main-section h1 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .main-section a {
-      display: inline-block;
-      margin: 0.5rem 1rem;
-      color: #003893;
-      text-decoration: none;
-      font-weight: bold;
-      border-bottom: 2px solid transparent;
-      transition: all 0.3s ease;
-    }
-
-    .main-section a:hover {
-      color: #DC143C;
-      border-color: #DC143C;
-    }
-
-    @media (max-width: 768px) {
-      .main-section h1 {
-        font-size: 1.6rem;
-      }
-    }
-  </style>
+  <!-- Link to unified CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -141,6 +24,15 @@
   </nav>
 </header>
 
+<section class="main-section">
+  <h1>Welcome to My World</h1>
+  <p>Hello! I'm Mausuf. This is my personal website where I share articles, thoughts, and updates.</p>
+  <a href="articles.html">Read Articles</a>
+  <a href="about.html">About Me</a>
+  <a href="contact.html">Contact</a>
+</section>
+
+<!-- Hamburger menu JS -->
 <script>
   const toggle = document.getElementById('menu-toggle');
   const nav = document.getElementById('nav');
