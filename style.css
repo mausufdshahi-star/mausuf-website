@@ -59,6 +59,9 @@ p {
 /* Nepal flag colors */
 .blue {
   color: #003893;
+  .red {
+  color: #DC143C;
+}
 }
 /* Political Spectrum Section */
 .spectrum {
