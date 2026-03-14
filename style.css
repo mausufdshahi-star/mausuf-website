@@ -47,6 +47,23 @@ h3 {
 p {
   margin: 20px;
 }
+/* Hero Title */
+.hero-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 4rem 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+/* Nepal flag colors */
+.blue {
+  color: #003893;
+}
+
+.red {
+  color: #dc143c;
+}
 /* Navigation */
 nav {
   display: flex;
