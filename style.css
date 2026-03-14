@@ -38,7 +38,15 @@ header:hover {
 h1 {
   margin: 20px;
 }
-
+h2 {
+  margin: 20px;
+}
+h3 {
+  margin: 20px;
+}
+p {
+  margin: 20px;
+}
 /* Navigation */
 nav {
   display: flex;
