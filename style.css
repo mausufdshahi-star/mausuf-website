@@ -373,7 +373,70 @@ nav a:hover {
   border-color: #dc143c;
   transform: scale(1.1);
 }
+/* Mausufism Section */
+.mausufism-section {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 2rem 5%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
 
+.mausufism-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #003893;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mausufism-section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+}
+
+/* Values List */
+.values-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.values-list .value {
+  background: #003893;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: default;
+}
+
+.values-list .value:hover {
+  background: #dc143c;
+  transform: scale(1.1);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .mausufism-section h2 {
+    font-size: 1.8rem;
+  }
+  .mausufism-section p {
+    font-size: 1rem;
+  }
+  .values-list {
+    gap: 0.7rem;
+  }
+  .values-list .value {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
 /* Footer */
 footer {
   background: #003893;
