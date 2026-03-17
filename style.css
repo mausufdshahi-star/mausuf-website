@@ -1,1 +1,166 @@
+:root {
+  --crimson: #dc143c;
+  --dark-blue: #0b3d91;
+  --text: #222;
+  --light: #f9f9f9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: "Inter", sans-serif;
+  background: white;
+  color: var(--text);
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+  font-family: "Poppins", sans-serif;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 15px 20px;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.logo img {
+  height: 90px;
+  margin-bottom: 15px;
+}
+
+/* NAVIGATION */
+nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 400;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--crimson);
+}
+
+.nepali-toggle {
+  font-family: "Noto Sans Devanagari", sans-serif;
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid var(--dark-blue);
+  border-radius: 5px;
+  color: var(--dark-blue);
+  font-size: 0.9rem;
+}
+
+.nepali-toggle:hover {
+  background: var(--dark-blue);
+  color: white;
+}
+
+/* HERO */
+.hero {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background: var(--light);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.hero-content h1 span {
+  color: var(--crimson);
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: #555;
+  font-style: italic;
+}
+
+/* SOCIAL ICONS */
+.social-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.social-section a {
+  color: var(--crimson);
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.social-section a:hover {
+  color: var(--dark-blue);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  color: #777;
+  border-top: 1px solid #eee;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .logo img {
+    height: 70px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .social-section a {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .social-section a {
+    font-size: 1.2rem;
+  }
+}
 
