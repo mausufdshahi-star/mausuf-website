@@ -1,66 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mausuf</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mausuf.</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="logo.png">
+<!-- Google Fonts: Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+<style>
+:root {
+  --red: #a4161a;
+  --blue: #0b2545;
+  --gray: #888;
+  --light-gray: #f8f8f8;
+}
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@400;500;600&family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
+/* BASE */
+html { scroll-behavior: smooth; }
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--blue);
+  background: #fff;
+}
+
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+}
+.wrap {
+  max-width: 880px;
+  margin: auto;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand img {
+  width: 36px;
+  height: 36px;
+}
+
+.brand span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--blue);
+}
+
+nav a {
+  margin-left: 18px;
+  font-size: 0.8rem;
+  color: var(--blue);
+  text-decoration: none;
+  position: relative;
+  opacity: 0.7;
+  transition: 0.25s;
+}
+nav a.active,
+nav a:hover { opacity: 1; color: var(--red);}
+nav a.active::after,
+nav a:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--red);
+}
+
+/* HERO */
+.hero {
+  max-width: 880px;
+  margin: 140px auto 80px;
+  padding: 0 20px;
+}
+.quote {
+  font-size: 2rem;
+  line-height: 1.4;
+  max-width: 650px;
+  color: var(--red);
+}
+
+/* SECTIONS */
+.section {
+  max-width: 880px;
+  margin: 70px auto;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.6s ease;
+}
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* GRID */
+.row {
+  display: flex;
+  gap: 40px;
+}
+.left {
+  width: 140px;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--red);
+}
+.right {
+  flex: 1;
+}
+
+/* ITEMS */
+.item {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--light-gray);
+  transition: 0.2s;
+}
+.item:hover { transform: translateX(4px); color: var(--red); }
+.item strong { display: block; font-weight: 500; }
+.item span { font-size: 0.85rem; color: var(--gray); }
+
+/* SKILLS */
+.skills span {
+  display: inline-block;
+  margin-right: 12px;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  border-bottom: 1px solid transparent;
+  transition: 0.2s;
+}
+.skills span:hover { opacity: 1; color: var(--red); border-bottom: 1px solid var(--red); }
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+.gallery img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* CONTACT */
+a.link {
+  display: block;
+  margin-bottom: 6px;
+  text-decoration: none;
+  color: var(--blue);
+  opacity: 0.7;
+  transition: 0.2s;
+  border-bottom: 1px solid transparent;
+}
+a.link:hover { opacity: 1; color: var(--red); border-bottom: 1px solid var(--red); }
+</style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">
-      <img src="logo.png" alt="Mausuf Logo">
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <img src="logo.png" alt="Logo">
+      <span>Mausuf.</span>
     </div>
-
     <nav>
-      <a href="#" data-en="Home" data-ne="गृहपृष्ठ">Home</a>
-      <a href="article-youthsandnepal2026.html" data-en="Articles" data-ne="लेखहरू">Articles</a>
-      <div class="nepali-toggle" onclick="toggleLanguage()">ने / EN</div>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#advocacy">Advocacy</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1 data-en="Learner, Seeker, Writer" data-ne="सिकारु, जिज्ञासु, लेखक">
-        Learner, Seeker, Writer
-      </h1>
-      <p data-en="Exploring ideas, questioning systems, and documenting the journey."
-         data-ne="विचारहरू अन्वेषण गर्दै, प्रणालीहरूलाई प्रश्न गर्दै, र यात्रालाई लेख्दै।">
-        Exploring ideas, questioning systems, and documenting the journey.
+<div class="hero">
+  <div class="quote">“Learner, Leader & Seeker”</div>
+</div>
+
+<div class="section" id="education">
+  <div class="row">
+    <div class="left">Education</div>
+    <div class="right">
+      <div class="item">
+        <strong>Adarsha Saula Yubak Secondary School</strong>
+        <span>Technical Secondary Education Exam (TSEE)</span>
+      </div><div class="item">
+        <strong>Little Angels' College</strong>
+        <span>GCE A Level (Non-Science)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="experience">
+  <div class="row">
+    <div class="left">Experience</div>
+    <div class="right">
+      <div class="item">
+        <strong>Chairperson</strong>
+        <span>Lalitpur Metropolitan City 25 Ward Level Child Club</span>
+      </div>
+      <div class="item">
+        <strong>Joint Secretary</strong>
+        <span>Lalitpur Metropolitan City Level Child Club</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="skills">
+  <div class="row">
+    <div class="left">Skills</div>
+    <div class="right skills">
+      <span>Public Speaking</span>
+      <span>Advocacy</span>
+      <span>Research</span>
+      <span>Organizing</span>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="advocacy">
+  <div class="row">
+    <div class="left">Advocacy</div>
+    <div class="right">
+      <p>
+        Focused on youth participation, civic awareness, and accountability.
+        My work encourages informed engagement and meaningful societal impact.
       </p>
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- SOCIAL ICONS ABOVE FOOTER -->
-  <section class="social-section">
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a "instagram.com/royal.mausuf"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </section>
+<div class="section" id="gallery">
+  <div class="row">
+    <div class="left">Gallery</div>
+    <div class="right gallery">
+      <img src="image1.jpg" alt="Gallery image 1">
+      <img src="image2.jpg" alt="Gallery image 2">
+      <img src="image3.jpg" alt="Gallery image 3">
+      <img src="image4.jpg" alt="Gallery image 4">
+    </div>
+  </div>
+</div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p data-en="© 2026 Mausuf. All rights reserved."
-       data-ne="© २०२६ मौसूफ। सबै अधिकार सुरक्षित।">
-      © 2026 Mausuf. All rights reserved.
-    </p>
-  </footer>
+<div class="section" id="contact">
+  <div class="row">
+    <div class="left">Contact</div>
+    <div class="right">
+      <a href="mailto:your@email.com" class="link">Email</a>
+      <a href="#" class="link">Instagram</a>
+      <a href="#" class="link">Twitter</a>
+    </div>
+  </div>
+</div>
 
-  <!-- JS -->
-  <script src="script.js"></script>
+<script>
+// scroll reveal
+const sections = document.querySelectorAll(".section");
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 80) sec.classList.add("show");
+  });
+});
+
+// highlight nav link
+const navLinks = document.querySelectorAll("nav a");
+window.addEventListener("scroll", () => {
+  let fromTop = window.scrollY + 100;
+  navLinks.forEach(link => {
+    const section = document.querySelector(link.hash);
+    if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+});
+</script>
+
 </body>
 </html>
