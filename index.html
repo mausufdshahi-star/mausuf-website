@@ -23,10 +23,6 @@
   box-sizing:border-box;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
 body{
   background:var(--bg);
   color:var(--text);
@@ -49,16 +45,12 @@ body{
 /* HERO */
 
 .hero{
-  min-height:82vh;
-  display:flex;
-  align-items:center;
-  padding:0 28px 120px;
+  padding:60px 28px 110px;
 }
 
 .content{
   max-width:760px;
   margin:auto;
-  width:100%;
 }
 
 .name{
@@ -84,7 +76,62 @@ body{
   color:var(--muted);
 }
 
-/* FOOT */
+/* WORKS */
+
+.works{
+  max-width:760px;
+  margin:auto;
+  padding:0 28px 120px;
+}
+
+.section-title{
+  font-size:0.78rem;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  margin-bottom:28px;
+  color:var(--muted);
+}
+
+.works-list{
+  display:flex;
+  flex-direction:column;
+}
+
+.work-item{
+  display:flex;
+  align-items:center;
+  gap:22px;
+
+  padding:22px 0;
+
+  text-decoration:none;
+  color:var(--text);
+
+  border-top:1px solid var(--line);
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:2rem;
+
+  transition:0.25s;
+}
+
+.work-item:last-child{
+  border-bottom:1px solid var(--line);
+}
+
+.work-item span{
+  font-family:'Inter',sans-serif;
+  font-size:0.8rem;
+  color:var(--muted);
+  letter-spacing:2px;
+}
+
+.work-item:hover{
+  padding-left:10px;
+  color:#555;
+}
+
+/* FOOTER */
 
 .footer{
   padding:40px 28px;
@@ -132,8 +179,8 @@ body{
     line-height:1.9;
   }
 
-  .hero{
-    min-height:75vh;
+  .work-item{
+    font-size:1.5rem;
   }
 
 }
@@ -167,6 +214,40 @@ body{
       Exploring ideas through advocacy, reflection,
       and public engagement.
     </div>
+
+  </div>
+
+</section>
+
+<!-- WORKS -->
+
+<section class="works">
+
+  <div class="section-title">
+    Works
+  </div>
+
+  <div class="works-list">
+
+    <a href="#" class="work-item">
+      <span>01</span>
+      Work 1
+    </a>
+
+    <a href="#" class="work-item">
+      <span>02</span>
+      Work 2
+    </a>
+
+    <a href="#" class="work-item">
+      <span>03</span>
+      Work 3
+    </a>
+
+    <a href="#" class="work-item">
+      <span>04</span>
+      Work 4
+    </a>
 
   </div>
 
