@@ -3,305 +3,190 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mausuf.</title>
 
-<!-- Google Fonts: Poppins -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --red: #a4161a;
-  --blue: #0b2545;
-  --gray: #888;
-  --light-gray: #f8f8f8;
+
+:root{
+  --bg:#f8f6f2;
+  --text:#111111;
+  --muted:#777777;
+  --line:#e8e4dc;
 }
 
-/* BASE */
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  color: var(--blue);
-  background: #fff;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-/* HEADER */
-header {
-  position: sticky;
-  top: 0;
-  background: #fff;
-  border-bottom: 1px solid #eee;
-  z-index: 1000;
-}
-.wrap {
-  max-width: 880px;
-  margin: auto;
-  padding: 16px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+html{
+  scroll-behavior:smooth;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',sans-serif;
+  -webkit-font-smoothing:antialiased;
 }
 
-.brand img {
-  width: 36px;
-  height: 36px;
+/* TOP */
+
+.top{
+  padding:34px 28px;
 }
 
-.brand span {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--blue);
-}
-
-nav a {
-  margin-left: 18px;
-  font-size: 0.8rem;
-  color: var(--blue);
-  text-decoration: none;
-  position: relative;
-  opacity: 0.7;
-  transition: 0.25s;
-}
-nav a.active,
-nav a:hover { opacity: 1; color: var(--red);}
-nav a.active::after,
-nav a:hover::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--red);
+.logo{
+  width:42px;
+  height:42px;
+  object-fit:contain;
 }
 
 /* HERO */
-.hero {
-  max-width: 880px;
-  margin: 140px auto 80px;
-  padding: 0 20px;
-}
-.quote {
-  font-size: 2rem;
-  line-height: 1.4;
-  max-width: 650px;
-  color: var(--red);
+
+.hero{
+  min-height:82vh;
+  display:flex;
+  align-items:center;
+  padding:0 28px 120px;
 }
 
-/* SECTIONS */
-.section {
-  max-width: 880px;
-  margin: 70px auto;
-  padding: 0 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: 0.6s ease;
-}
-.section.show {
-  opacity: 1;
-  transform: translateY(0);
+.content{
+  max-width:760px;
+  margin:auto;
+  width:100%;
 }
 
-/* GRID */
-.row {
-  display: flex;
-  gap: 40px;
-}
-.left {
-  width: 140px;
-  font-size: 0.7rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--red);
-}
-.right {
-  flex: 1;
+.name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:5.8rem;
+  font-weight:500;
+  letter-spacing:-2px;
+  line-height:1;
 }
 
-/* ITEMS */
-.item {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--light-gray);
-  transition: 0.2s;
-}
-.item:hover { transform: translateX(4px); color: var(--red); }
-.item strong { display: block; font-weight: 500; }
-.item span { font-size: 0.85rem; color: var(--gray); }
-
-/* SKILLS */
-.skills span {
-  display: inline-block;
-  margin-right: 12px;
-  margin-bottom: 6px;
-  font-size: 0.9rem;
-  opacity: 0.7;
-  border-bottom: 1px solid transparent;
-  transition: 0.2s;
-}
-.skills span:hover { opacity: 1; color: var(--red); border-bottom: 1px solid var(--red); }
-
-/* GALLERY */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
-}
-.gallery img {
-  width: 100%;
-  display: block;
-  border-radius: 6px;
-  transition: transform 0.3s, opacity 0.3s;
-}
-.gallery img:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
+.line{
+  width:80px;
+  height:1px;
+  background:var(--text);
+  margin:34px 0;
+  opacity:0.2;
 }
 
-/* CONTACT */
-a.link {
-  display: block;
-  margin-bottom: 6px;
-  text-decoration: none;
-  color: var(--blue);
-  opacity: 0.7;
-  transition: 0.2s;
-  border-bottom: 1px solid transparent;
+.bio{
+  max-width:560px;
+  font-size:1rem;
+  line-height:2;
+  color:var(--muted);
 }
-a.link:hover { opacity: 1; color: var(--red); border-bottom: 1px solid var(--red); }
+
+/* FOOT */
+
+.footer{
+  padding:40px 28px;
+  border-top:1px solid var(--line);
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.footer-left{
+  color:var(--muted);
+  font-size:0.85rem;
+}
+
+.links{
+  display:flex;
+  gap:22px;
+}
+
+.links a{
+  text-decoration:none;
+  color:var(--text);
+  font-size:0.9rem;
+  opacity:0.7;
+  transition:0.25s;
+}
+
+.links a:hover{
+  opacity:1;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .name{
+    font-size:3.5rem;
+  }
+
+  .bio{
+    font-size:0.96rem;
+    line-height:1.9;
+  }
+
+  .hero{
+    min-height:75vh;
+  }
+
+}
+
 </style>
 </head>
+
 <body>
 
-<header>
-  <div class="wrap">
-    <div class="brand">
-      <img src="logo.png" alt="Logo">
-      <span>Mausuf.</span>
-    </div>
-    <nav>
-      <a href="#education">Education</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#advocacy">Advocacy</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+<!-- TOP -->
 
-<div class="hero">
-  <div class="quote">“Learner, Leader & Seeker”</div>
+<div class="top">
+  <img src="logo.png" alt="Logo" class="logo">
 </div>
 
-<div class="section" id="education">
-  <div class="row">
-    <div class="left">Education</div>
-    <div class="right">
-      <div class="item">
-        <strong>Adarsha Saula Yubak Secondary School</strong>
-        <span>Technical Secondary Education Exam (TSEE)</span>
-      </div><div class="item">
-        <strong>Little Angels' College</strong>
-        <span>GCE A Level (Non-Science)</span>
-      </div>
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="content">
+
+    <div class="name">
+      Mausuf.
     </div>
-  </div>
-</div>
 
-<div class="section" id="experience">
-  <div class="row">
-    <div class="left">Experience</div>
-    <div class="right">
-      <div class="item">
-        <strong>Chairperson</strong>
-        <span>Lalitpur Metropolitan City 25 Ward Level Child Club</span>
-      </div>
-      <div class="item">
-        <strong>Joint Secretary</strong>
-        <span>Lalitpur Metropolitan City Level Child Club</span>
-      </div>
+    <div class="line"></div>
+
+    <div class="bio">
+      Writer, observer, and civic voice interested in society,
+      politics, culture, justice, and the human condition.
+      Exploring ideas through advocacy, reflection,
+      and public engagement.
     </div>
+
   </div>
-</div>
 
-<div class="section" id="skills">
-  <div class="row">
-    <div class="left">Skills</div>
-    <div class="right skills">
-      <span>Public Speaking</span>
-      <span>Advocacy</span>
-      <span>Research</span>
-      <span>Organizing</span>
-    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+  <div class="footer-left">
+    Kathmandu, Nepal
   </div>
-</div>
 
-<div class="section" id="advocacy">
-  <div class="row">
-    <div class="left">Advocacy</div>
-    <div class="right">
-      <p>
-        Focused on youth participation, civic awareness, and accountability.
-        My work encourages informed engagement and meaningful societal impact.
-      </p>
-    </div>
+  <div class="links">
+    <a href="#">Instagram</a>
+    <a href="#">Twitter</a>
+    <a href="#">Email</a>
   </div>
-</div>
 
-<div class="section" id="gallery">
-  <div class="row">
-    <div class="left">Gallery</div>
-    <div class="right gallery">
-      <img src="image1.jpg" alt="Gallery image 1">
-      <img src="image2.jpg" alt="Gallery image 2">
-      <img src="image3.jpg" alt="Gallery image 3">
-      <img src="image4.jpg" alt="Gallery image 4">
-    </div>
-  </div>
-</div>
-
-<div class="section" id="contact">
-  <div class="row">
-    <div class="left">Contact</div>
-    <div class="right">
-      <a href="mailto:your@email.com" class="link">Email</a>
-      <a href="#" class="link">Instagram</a>
-      <a href="#" class="link">Twitter</a>
-    </div>
-  </div>
-</div>
-
-<script>
-// scroll reveal
-const sections = document.querySelectorAll(".section");
-window.addEventListener("scroll", () => {
-  sections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    if (top < window.innerHeight - 80) sec.classList.add("show");
-  });
-});
-
-// highlight nav link
-const navLinks = document.querySelectorAll("nav a");
-window.addEventListener("scroll", () => {
-  let fromTop = window.scrollY + 100;
-  navLinks.forEach(link => {
-    const section = document.querySelector(link.hash);
-    if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
-  });
-});
-</script>
+</footer>
 
 </body>
 </html>
